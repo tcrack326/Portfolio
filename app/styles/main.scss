@@ -2,6 +2,18 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+
+//fonts
+
+$cabin: 'Cabin', sans-serif;
+$beanie: 'Reenie Beanie', cursive;
+$pacifico: 'Pacifico', cursive;
+$oxygen: 'Oxygen', sans-serif;
+$dancing: 'Dancing Script', cursive;
+$raleway: 'Raleway', sans-serif;
+$daughter: 'Architects Daughter', cursive;
+
+
 // Custom Styles
 body {
   background: #fafafa;
@@ -9,18 +21,59 @@ body {
   color: #333;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+
+html,
+body,
+.wrapper
+{
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-family: $beanie;
+  color: rgba(255,255,255,0);
+  font-size: 11.0vw;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  -webkit-mask-image: url('../images/mask_image2.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
+  animation: move 3s .4s forwards;
+}
+
+.reveal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  color: rgba(255,255,255,0);
+  -webkit-mask-image: none;
+  animation: none;
+  padding-top: 13%;
+  transition: color 1s .4s linear;
+
+  &:hover {
+    color: rgba(255,255,255,100);
+  }
+}
+
+.wrapper {
+  background-image: url("../images/Atl_background2.jpeg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+@keyframes move {
+  100% {
+    padding-top: 13%;
+    color: rgba(255,255,255,100);
   }
 }
