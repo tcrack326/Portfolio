@@ -2,44 +2,50 @@
 $('.parallax').on('scroll', function () {
 
   if( $('#moveLeft1').offset().top > 50){
-    $('#moveLeft1').css({ left: -$('#moveLeft1').offset().top + 70 });
-    var rotator = -($('#moveLeft1').offset().top) / 2;
-    $('#moveLeft1').css("transform", "rotateY(" + rotator + "deg)");
+    var rotator = ($('#moveLeft1').offset().top) / 2;
+    //$('#moveLeft1').css({ left: -$('#moveLeft1').offset().top + 70 });
+    $('#moveLeft1').css("transform", "translateX(" + (-$('#moveLeft1').offset().top + 59 ) + "px) rotateY(" + rotator + "deg)");
+
+    //$('#moveLeft1').css("transform", "rotateY(" + rotator + "deg)");
   }
 
   else {
     $('#moveLeft1').css("transform", "rotateY(0deg)");
   }
 
-  if( $('#moveRight1').offset().top > 50){
-    $('#moveRight1').css({ right: -$('#moveRight1').offset().top - 220 });
-    var rotator = ($('#moveRight1').offset().top) / 2;
-    $('#moveRight1').css("transform", "rotateY(" + rotator + "deg)");
+  if( $('#moveRight1').offset().top > 50) {
+    //$('#moveRight1').css({ right: $('#moveRight1').offset().top });
+    var rotator = -($('#moveRight1').offset().top) / 2;
+    $('#moveRight1').css("transform", "translateX(" + ($('#moveRight1').offset().top - 81 ) + "px) rotateY(" + rotator + "deg)");
+    //$('#moveRight1').css("transform", "rotateY(" + rotator + "deg)");
   }
 
   else {
     $('#moveRight1').css("transform", "rotateY(0deg)");
   }
 
-  if( $('#moveLeft2').offset().top > 50){
-    $('#moveLeft2').css({ left: -$('#moveLeft2').offset().top + 70 });
-    var rotator = -($('#moveLeft2').offset().top) / 2;
-    $('#moveLeft2').css("transform", "rotateY(" + rotator + "deg)");
-  }
+if( $('#moveLeft2').offset().top > 50){
+  var rotator = ($('#moveLeft2').offset().top) / 2;
+  //$('#moveLeft1').css({ left: -$('#moveLeft1').offset().top + 70 });
+  $('#moveLeft2').css("transform", "translateX(" + (-$('#moveLeft2').offset().top + 59 ) + "px) rotateY(" + rotator + "deg)");
 
-  else {
-    $('#moveLeft2').css("transform", "rotateY(0deg)");
-  }
+  //$('#moveLeft1').css("transform", "rotateY(" + rotator + "deg)");
+}
 
-  if( $('#moveRight2').offset().top > 50){
-    $('#moveRight2').css({ right: -$('#moveRight2').offset().top - 220 });
-    var rotator = -($('#moveRight2').offset().top) / 2;
-    $('#moveRight2').css("transform", "rotateY(" + rotator + "deg)");
-  }
+else {
+  $('#moveLeft2').css("transform", "rotateY(0deg)");
+}
 
-  else {
-    $('#moveRight2').css("transform", "rotateY(0deg)");
-  }
+if( $('#moveRight2').offset().top > 50) {
+  //$('#moveRight1').css({ right: $('#moveRight1').offset().top });
+  var rotator = -($('#moveRight2').offset().top) / 2;
+  $('#moveRight2').css("transform", "translateX(" + ($('#moveRight2').offset().top - 81 ) + "px) rotateY(" + rotator + "deg)");
+  //$('#moveRight1').css("transform", "rotateY(" + rotator + "deg)");
+}
+
+else {
+  $('#moveRight2').css("transform", "rotateY(0deg)");
+}
 
   if( $('#moveLeft3').offset().top > 50){
     $('#moveLeft3').css({ left: -$('#moveLeft3').offset().top + 70 });
