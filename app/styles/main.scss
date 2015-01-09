@@ -13,12 +13,21 @@ $dancing: 'Dancing Script', cursive;
 $raleway: 'Raleway', sans-serif;
 $daughter: 'Architects Daughter', cursive;
 
+//colors
+$babyblue: RGBA(163, 211, 245, 1);
+$lessbaby: RGBA(204, 231, 247, 1);
+$bluegray: RGBA(81, 98, 131, 1);
+$bluetrans: RGBA(81, 98, 131, 0.6);
+$colombia: RGBA(161, 214, 251, 1);
 
 // Custom Styles
 body {
-  background: #fafafa;
+  //background: linear-gradient(to bottom, $babyblue, $bluegray);
+  background: linear-gradient(to bottom, white,$babyblue);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100%;
   color: #333;
+
 }
 
 
@@ -29,6 +38,7 @@ body {
   background-repeat: no-repeat;
   max-width: 100%;
   max-height: 100%;
+  border-bottom: 2px solid white;
 }
 
 h1 {
@@ -47,6 +57,49 @@ h1 {
   animation: move 3s .4s forwards;
 }
 
+h2 {
+  font-family: $cabin;
+  font-size: 6vw;
+  color: white;
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
+}
+
+h3 {
+  font-size: .7em;
+  margin: 0;
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
+}
+
+p {
+  font-size: .4em;
+  margin: 0;
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
+}
+
+ul{
+  margin: 5% 0 5% 0;
+}
+
+li {
+  font-size: .4em;
+  text-align: left;
+  -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
+
+}
+
+a {
+  color: $babyblue;
+
+  &:hover {
+    color: orange;
+  }
+}
+
+#myWork {
+  position: absolute;
+  top: -70px;
+}
+
 .reveal {
   position: absolute;
   top: 0;
@@ -59,7 +112,7 @@ h1 {
   transition: color 1s .4s linear;
 
   &:hover {
-    color: rgba(255,255,255,100);
+    color: rgba(255,255,255,1);
   }
 }
 
@@ -67,10 +120,107 @@ h1 {
 @keyframes move {
   100% {
     padding-top: 13%;
-    color: rgba(255,255,255,100);
+    color: rgba(255,255,255,1);
   }
 }
 
+/* Header Contact
+-------------------------------------------------*/
+
+.header-contact {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 3;
+
+
+  a {
+    float: right;
+    clear: both;
+    margin-right: 5px;
+    color: white;
+    font-family: $daughter;
+    text-decoration: none;
+    font-size: .3em;
+    opacity: 0;
+    transition: color 2s ease;
+    transition: font-size 2s ease;
+    animation: fadeIn 8s 2s forwards;
+
+    &:hover {
+      opacity: 1;
+      font-size: .6em;
+      color: rgba(100,100,100,1);
+
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .header-contact a {
+    font-size: .5em;
+  }
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .6;
+  }
+}
+
+
+/* About Me section styles
+----------------------------------------------- */
+
+.aboutMe {
+  max-width: 100%;
+  //height: 100vw;
+  //height: 30vw;
+  //overflow: auto;
+  text-align: center;
+  margin: 0;
+  max-height: 100%;
+  //min-height: 400px;
+  text-align: center;
+  background: linear-gradient(to bottom, white, $babyblue);
+
+  section {
+    float: left;
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 31.25%;
+    min-width: 315px;
+    text-align: center;
+    //background-color: $babyblue;
+    //background: linear-gradient(to bottom, $colombia, $babyblue);
+    background: linear-gradient(to bottom, $bluegray, $bluegray);
+    overflow: hidden;
+    color: white;
+    font-family: $oxygen;
+    margin: 2% 1% 0 1%;
+    padding: .25%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .aboutMe section {
+    width: 45%;
+    margin: 2% 2.33% 0 2.33%;
+  }
+}
+
+@media (max-width: 690px) {
+  .aboutMe section {
+    width: 93%;
+    margin:2% 3.33% 0 3.33%;
+  }
+
+}
 
   /* Parallax base styles
   --------------------------------------------- */
@@ -175,18 +325,30 @@ h1 {
   --------------------------------------------- */
   #title {
     z-index: 3;
+    background: linear-gradient(to bottom, $lessbaby, white);
+  }
+
+  #group1a {
+    z-index: 2;
+  }
+
+  #group1a .parallax__layer--back {
+    background-image: url('../images/me_1.jpeg');
+    background-size: cover;
   }
 
   #group1 {
     z-index: 5; /* slide over group 2 */
   }
   #group1 .parallax__layer--base {
-    background: rgb(102,204,102);
+    background: linear-gradient(to bottom, white, $babyblue);
+    background-color: white;
   }
 
   #group2 {
     z-index: 3; /* slide under groups 1 and 3 */
   }
+
   #group2 .parallax__layer--back {
     background-image: url('../images/me_1.jpeg');
     background-size: cover;
@@ -196,82 +358,252 @@ h1 {
     z-index: 4; /* slide over group 2 and 4 */
   }
   #group3 .parallax__layer--base {
-    background: rgb(153,216,101);
+    background: linear-gradient(to bottom, $babyblue, white);
   }
 
   #group4 {
     z-index: 2; /* slide under group 3 and 5 */
   }
   #group4 .parallax__layer--deep {
-    background: rgb(184,223,101);
+
   }
 
   #group5 {
     z-index: 3; /* slide over group 4 and 6 */
   }
   #group5 .parallax__layer--base {
-    background: rgb(214,229,100);
+
   }
 
   #group6 {
     z-index: 2; /* slide under group 5 and 7 */
   }
   #group6 .parallax__layer--back {
-    background: rgb(245,235,100);
+
   }
 
   #group7 {
     z-index: 3; /* slide over group 7 */
   }
   #group7 .parallax__layer--base {
-    background: rgb(255,241,100);
+
   }
 
-  /* Debugger styles - used to show the effect
-  --------------------------------------------- */
+  #group8 {
+    z-index: 2; /* slide under group 7 and 9 */
+  }
+  #group8 .parallax__layer--back {
+  //  background: linear-gradient(to bottom, white, $babyblue);
 
-  .debug {
-    position: fixed;
-    top: 0;
-    left: .5em;
-    z-index: 999;
-    background: rgba(0,0,0,.85);
-    color: #fff;
-    padding: .5em;
-    border-radius: 0 0 5px 5px;
-  }
-  .debug-on .parallax__group {
-    -webkit-transform: translate3d(800px, 0, -800px) rotateY(30deg);
-    transform: translate3d(700px, 0, -800px) rotateY(30deg);
- }
-  .debug-on .parallax__layer {
-    box-shadow: 0 0 0 2px #000;
-    opacity: 0.9;
-  }
-  .parallax__group {
-    -webkit-transition: -webkit-transform 0.5s;
-    transition: transform 0.5s;
   }
 
-  /*==============================================================*/
+  #group9 {
+    z-index: 3; /* slide over group 9 */
+  }
+  #group9 .parallax__layer--base {
+    background: linear-gradient(to bottom, white, $babyblue);
+  }
+
+  #group9a {
+    z-index: 2; /* slide over group 9 */
+  }
+  #group9a .parallax__layer--back {
+    background-image: url('../images/me_1.jpeg');
+    background-size: cover;
+  }
+
+
+  #group10 {
+    z-index: 2; /* slide under group 9 and 11  */
+  }
+
+  #group10 .parallax__layer--base {
+    background: linear-gradient(to bottom, $babyblue, white);
+  }
+
+  #group10 .parallax__layer--back {
+
+  }
+
+  #group11 {
+    z-index: 3;
+  }
+
+/*==============================================================
+=============================================================*/
 
   .moveLeft {
     position: absolute;
-    top: 50px;
-    //transform-origin: left center;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    padding: 1%;
+    border-radius: 10px;
+    border: 1px solid white;
+    transform-origin: left center;
+    background-color: $bluegray;
+    //background: linear-gradient(to bottom, $colombia, $babyblue);
     //box-shadow: 10px 10px 5px gray;
     img {
       width: 70%;
       height: 70%;
+      margin: 3px 0 0 5px;
+      border: 6px solid gray;
+      border-radius: 10px;
     }
   }
 
   .moveRight {
     position: absolute;
-    top: 50px;
-    //transform: right center;
+    top: 5%;
+    right: 5%;
+    width: 90%;
+    padding: 1%;
+    border-radius: 10px;
+    border: 1px solid white;
+    transform-origin: right center;
+    background-color: $bluegray;
+
     img {
       width: 70%;
       height: 70%;
+      margin: 3px 0 0 5px;
+      border: 6px solid gray;
+      border-radius: 10px;
+      float: right;
     }
   }
+
+/* Move Panel Styles --------------------
+-------------------------------------------------------*/
+
+moveLeft1 {
+  background-color: $bluegray;
+  //width: 100%;
+}
+
+.artLeft {
+  position: absolute;
+  background-color: $bluetrans;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 1%;
+  color: white;
+  font-family: $oxygen;
+  top: 8%;
+  right: 6%;
+  width: 25%;
+}
+
+.artRight {
+  position: absolute;
+  background-color: $bluetrans;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 1%;
+  color: white;
+  font-family: $oxygen;
+  top: 8%;
+  left: 6%;
+  width: 25%;
+}
+
+@media (max-width: 690px) {
+  .moveLeft {
+    width: 95%;
+    //top: 35%;
+    left: 2.5%;
+
+    img {
+      width: 98%;
+    }
+  }
+
+  .moveRight {
+    width: 95%;
+    right: 2.5%;
+
+    img {
+      width: 98%;
+
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .artLeft {
+    top: 8%;
+    right: 5%;
+    width: 60%;
+  }
+
+  .artRight {
+    top: 8%;
+    left: 5%;
+    width: 60%;
+  }
+
+  .moveLeft img {
+    width: 70%;
+
+  }
+
+  .moveRight img {
+    width: 70%;
+  }
+
+  #image1 {
+    content: url("../images/ParentHood_SS2.png");
+  }
+
+  #image2 {
+    content: url("../images/FastCars_SS2.png")
+  }
+
+  #image3 {
+    content: url("../images/Holler_SS2.png");
+  }
+
+  #image4 {
+    content: url("../images/FlyingPig.png")
+  }
+
+  #image5 {
+    content: url("../images/DailyChores_ss2.png");
+  }
+
+  #image6 {
+    content: url("../images/IronYardWarriors_SS2.png")
+  }
+
+  #image7 {
+    content: url("../images/ToDoList_SS2.png");
+  }
+
+  #image8 {
+    content: url("../images/GitHub_SS2.png")
+  }
+
+  #image9 {
+    content: url("../images/SurfPaddle_SS2.png");
+  }
+}
+
+// Footer - Contact Me section -------------------------
+.contactMe {
+  float: left;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 31.25%;
+  min-width: 315px;
+  text-align: center;
+  //background-color: $babyblue;
+  //background: linear-gradient(to bottom, $colombia, $babyblue);
+  background: linear-gradient(to bottom, $bluegray, $bluegray);
+  overflow: hidden;
+  color: white;
+  font-family: $oxygen;
+  margin: 2% 1% 0 1%;
+  padding: .25%;
+
+}
