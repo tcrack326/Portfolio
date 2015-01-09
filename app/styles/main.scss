@@ -58,8 +58,10 @@ h1 {
 }
 
 h2 {
+  text-align: center;
   font-family: $cabin;
   font-size: 6vw;
+  margin-left: 2%;
   color: white;
   -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
 }
@@ -77,14 +79,13 @@ p {
 }
 
 ul{
-  margin: 5% 0 5% 0;
+  margin: 3% 0 3% 0;
 }
 
 li {
   font-size: .4em;
   text-align: left;
   -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
-
 }
 
 a {
@@ -590,6 +591,24 @@ moveLeft1 {
 }
 
 // Footer - Contact Me section -------------------------
+ul.endList {
+  list-style: none;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    font-size: .8em;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+}
 .contactMe {
   float: left;
   border: 1px solid white;
