@@ -62,6 +62,7 @@ h2 {
   font-family: $cabin;
   font-size: 100%;
   margin-left: 2%;
+  padding-top: 2%;
   color: white;
   -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
 }
@@ -73,7 +74,7 @@ h2 {
 }
 
 h3 {
-  font-size: .7em;
+  font-size: .6em;
   margin: 0;
   -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
 }
@@ -339,7 +340,19 @@ a {
 
 
 //need to make the background longer for mobile
-  @media (max-width: 319px) {
+  @media (max-width: 780px) {
+    #title {
+      height: 80vw;
+    }
+  }
+
+  @media (max-width: 661px) {
+    #title {
+      height: 130vw;
+    }
+  }
+
+  @media (max-width: 421px) {
     #title {
       height: 200vw;
     }
@@ -660,7 +673,7 @@ ul.endList {
 
 // Fix for contacts length on mobile
 
-@media (min-width: 300px) {
+@media (min-width: 400px) {
   #contactList {
   margin: 0;
   padding: 0;
