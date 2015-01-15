@@ -60,10 +60,16 @@ h1 {
 h2 {
   text-align: center;
   font-family: $cabin;
-  font-size: 6vw;
+  font-size: 100%;
   margin-left: 2%;
   color: white;
   -webkit-filter: drop-shadow(2px 2px 5px rgba(0,0,0, .5));
+}
+
+@media (min-width: 600px) {
+  h2 {
+    font-size: 5vw;
+  }
 }
 
 h3 {
@@ -195,7 +201,7 @@ a {
     border: 1px solid white;
     border-radius: 10px;
     width: 31.25%;
-    min-width: 315px;
+    min-width: 300px;
     text-align: center;
     //background-color: $babyblue;
     //background: linear-gradient(to bottom, $colombia, $babyblue);
@@ -331,6 +337,14 @@ a {
     background: linear-gradient(to bottom, $lessbaby, white);
   }
 
+
+//need to make the background longer for mobile
+  @media (max-width: 319px) {
+    #title {
+      height: 200vw;
+    }
+  }
+
   #group1a {
     z-index: 2;
   }
@@ -430,6 +444,18 @@ a {
 
   #group11 {
     z-index: 3;
+
+  }
+
+  #group12 {
+    z-index: 3;
+    height: 50vw;
+  }
+
+  @media (min-width: 300px ) {
+    #group12 {
+    //  height: 50vw;
+    }
   }
 
 /*==============================================================
@@ -596,10 +622,13 @@ moveLeft1 {
 ul.endList {
   list-style: none;
   text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0 0 0 0;
 
   li {
     display: inline-block;
-    font-size: .8em;
+    font-size: 3vw;
 
     a {
       color: white;
@@ -627,4 +656,20 @@ ul.endList {
   margin: 2% 1% 0 1%;
   padding: .25%;
 
+}
+
+// Fix for contacts length on mobile
+
+@media (min-width: 300px) {
+  #contactList {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+}
 }
