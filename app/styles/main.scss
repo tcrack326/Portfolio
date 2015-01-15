@@ -673,7 +673,7 @@ ul.endList {
 
 // Fix for contacts length on mobile
 
-@media (min-width: 400px) {
+//@media (min-width: 400px) {
   #contactList {
   margin: 0;
   padding: 0;
@@ -684,5 +684,5 @@ ul.endList {
     padding: 0;
     margin: 0;
   }
-}
+
 }
