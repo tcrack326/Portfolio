@@ -369,7 +369,7 @@ a {
   }
 
   #group1a .parallax__layer--back {
-    background-image: url('../images/me_1.jpeg');
+    background-image: url('../images/mathbackground.jpg');
     background-size: cover;
   }
 
@@ -386,7 +386,7 @@ a {
   }
 
   #group2 .parallax__layer--back {
-    background-image: url('../images/me_1.jpeg');
+    background-image: url('../images/background2.jpg');
     background-size: cover;
   }
 
@@ -401,7 +401,8 @@ a {
     z-index: 2; /* slide under group 3 and 5 */
   }
   #group4 .parallax__layer--deep {
-
+    background-image: url('../images/Space_231211.jpg');
+    background-size: cover;
   }
 
   #group5 {
@@ -437,14 +438,14 @@ a {
     z-index: 3; /* slide over group 9 */
   }
   #group9 .parallax__layer--base {
-    background: linear-gradient(to bottom, white, $babyblue);
+    //background: linear-gradient(to bottom, white, $babyblue);
   }
 
   #group9a {
     z-index: 2; /* slide over group 9 */
   }
   #group9a .parallax__layer--back {
-    background-image: url('../images/me_1.jpeg');
+    background-image: url('../images/background1.jpg');
     background-size: cover;
   }
 
@@ -580,13 +581,13 @@ moveLeft1 {
 
 @media (max-width: 560px) {
   .artLeft {
-    top: 8%;
+    top: 18%;
     right: 5%;
     width: 60%;
   }
 
   .artRight {
-    top: 8%;
+    top: 18%;
     left: 5%;
     width: 60%;
   }
